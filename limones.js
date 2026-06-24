@@ -71,6 +71,9 @@ function detectarAtrapado(){
         aparecerLimon()
         puntaje=puntaje+1
         mostrarEnSpam("txtPuntaje",puntaje)
+        if(puntaje==3){ velocidadCaida=150}
+        else if(puntaje==6){velocidadCaida=100}
+        else if (puntaje==10){alert("!GANASTE! Tienes todos los limones... el resto es historia")}
     }
 }
 
