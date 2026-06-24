@@ -79,6 +79,9 @@ function detectarPiso(){
         aparecerLimon()
         vidas=vidas-1
         mostrarEnSpam("txtVidas",vidas)
+        if(vidas==0){
+            alert ("GAME OVER")
+        }
     }
 
 }
