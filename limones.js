@@ -99,3 +99,12 @@ function aparecerLimon(){
     limonY=0
     actualizarPantalla()
 }
+
+function reiniciar(){
+    clearInterval(intervalo)
+    puntaje=0
+    mostrarEnSpam("txtPuntaje",0)
+    vidas=3
+    mostrarEnSpam("txtVidas",3)
+    iniciar()
+}
