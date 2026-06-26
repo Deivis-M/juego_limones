@@ -107,6 +107,8 @@ function reiniciar(){
     mostrarEnSpam("txtPuntaje",0)
     vidas=3
     mostrarEnSpam("txtVidas",3)
+    ALTURA_PERSONAJE=100;
+    ANCHO_PERSONAJE=60;
     iniciar()
 }
 
