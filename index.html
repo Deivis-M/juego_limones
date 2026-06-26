@@ -1,27 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Atrapar Limon</title>
-  <link rel="stylesheet" href="limones.css"/>
-  <script src="utils.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atrapar Limón</title>
+
+    <link rel="stylesheet" href="limones.css">
+    <script src="utils.js"></script>
 </head>
+
 <body onload="iniciar()">
-  <div class="contenedor">
-    <h1>Atrapar Limones</h1>
-    <p>Si del cielo te caen limones aprende a hacer limonada </p>
-    <h2>Autor Deivis</h2>
-    <canvas id="areJuego" width="600" height="400"></canvas>
-    <div class="panel">
-      <p>Puntaje: <span id="txtPuntaje">0</span></p>
-      <p>Vidas: <span id="txtVidas">3</span></p>
+
+<div class="contenedor">
+
+    <div class="titulo">
+        <h1>🍋 Atrapar Limones</h1>
+        <p>Si del cielo te caen limones, aprende a hacer limonada.</p>
+        <h2>Autor: Deivis</h2>
     </div>
-    <div class="botones">
-      <button onclick="moverIzquierda()">Izquierda</button>
-      <button onclick="moverDerecha()">Derecha</button>
-      <button onclick="reiniciar()">Reiniciar</button>
-      <button onclick="desaparecerPersonaje()">Desaparecer</button>
+
+    <div class="juego">
+
+        <canvas id="areJuego" width="600" height="400"></canvas>
+
+        <div class="panel">
+
+            <div class="dato">
+                <span class="texto">🏆 Puntaje</span>
+                <span id="txtPuntaje">0</span>
+            </div>
+
+            <div class="dato">
+                <span class="texto">❤️ Vidas</span>
+                <span id="txtVidas">3</span>
+            </div>
+
+        </div>
+
+        <div class="botones">
+            <button onclick="moverIzquierda()">⬅ Izquierda</button>
+            <button onclick="moverDerecha()">Derecha ➡</button>
+            <button onclick="reiniciar()">🔄 Reiniciar</button>
+            <button onclick="desaparecerPersonaje()">👻 Desaparecer</button>
+        </div>
+
     </div>
-  </div>
- <script src="limones.js"></script>
+
+</div>
+
+<script src="limones.js"></script>
+
 </body>
 </html>
