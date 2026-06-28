@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@500;700;800&display=swap');
+
+:root{
+    --cielo-1:#5ec8f0;
+    --cielo-2:#1f7fc4;
+    --hoja-1:#3fb24f;
+    --hoja-2:#1f7a30;
+    --panel:#0c1c2e;
+    --panel-borde:#163049;
+    --limon:#ffd400;
+    --limon-claro:#fff3a3;
+    --crema:#fffaf0;
+    --tinta:#0b1a12;
+    --azul-fantasma:#3aa0ff;
+}
+
 *{
     margin:0;
     padding:0;
@@ -5,140 +21,230 @@
 }
 
 body{
+    font-family:'Nunito', Arial, sans-serif;
 
-    font-family:Arial, Helvetica, sans-serif;
-
-    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    background:
+        radial-gradient(ellipse 700px 380px at 12% 8%, rgba(255,255,255,.35), transparent 60%),
+        linear-gradient(180deg, var(--cielo-1) 0%, var(--cielo-2) 45%, var(--hoja-2) 100%);
 
     min-height:100vh;
 
     display:flex;
     justify-content:center;
     align-items:center;
+    padding:30px 16px;
 
-    color:white;
+    color:var(--crema);
+
+    position:relative;
+    overflow-x:hidden;
+}
+
+/* Hojas y limones decorativos de fondo, puro CSS, sin imagenes externas */
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:340px;
+    height:340px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--limon-claro), var(--limon) 60%, #e0b400 100%);
+    filter:blur(2px);
+    opacity:.35;
+    z-index:0;
+}
+
+body::before{
+    top:-120px;
+    left:-120px;
+}
+
+body::after{
+    bottom:-140px;
+    right:-110px;
 }
 
 .contenedor{
+    width:880px;
+    max-width:96%;
 
-    width:850px;
-    max-width:95%;
+    background:linear-gradient(160deg, #11304a, #0c1c2e 60%);
 
-    background:#1e293b;
+    padding:28px 34px 34px;
 
-    padding:30px;
+    border-radius:28px;
+    border:4px solid var(--hoja-1);
 
-    border-radius:20px;
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.45),
+        inset 0 0 0 3px rgba(255,255,255,.04);
 
-    box-shadow:0px 15px 40px rgba(0,0,0,.45);
-
+    position:relative;
+    z-index:1;
 }
 
 .titulo{
-
     text-align:center;
-    margin-bottom:25px;
-
-}
-
-.titulo h1{
-
-    font-size:42px;
-    color:#facc15;
-    margin-bottom:10px;
-
-}
-
-.titulo p{
-
-    color:#cbd5e1;
-    margin-bottom:8px;
-
-}
-
-.titulo h2{
-
-    color:#94a3b8;
-    font-size:18px;
-    font-weight:normal;
-
-}
-
-.juego{
+    margin-bottom:18px;
 
     display:flex;
     flex-direction:column;
     align-items:center;
+}
 
+.titulo .marca{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    width:100%;
+}
+
+.titulo .logo{
+    width:130px;
+    height:130px;
+
+    margin-left:-10px;   /* solo un poco a la izquierda */
+    margin-top:0;
+
+    border-radius:20px;
+    box-shadow:0 6px 16px rgba(0,0,0,.4), 0 0 0 3px var(--hoja-1);
+    background:#08151f;
+    object-fit:cover;
+    flex-shrink:0;
+}
+
+.titulo h1{
+    font-family:'Nunito', sans-serif;
+    font-size:60px;
+    font-weight:900;
+    color:#FFD400;
+
+    letter-spacing:.5px;
+
+    -webkit-text-stroke:3px #16330f;
+
+    text-shadow:
+        3px 3px 0 #16330f,
+        0 8px 14px rgba(0,0,0,.5);
+
+    flex:1;
+    text-align:center;
+    margin-right:120px;
+}
+
+.titulo p{
+    color:#dfeefc;
+    font-weight:750;
+    margin-bottom:6px;
+    font-size:20px;
+}
+
+.titulo h2{
+    color:var(--limon-claro);
+    font-size:14px;
+    font-weight:700;
+    background:rgba(63,178,79,.18);
+    border:1px solid var(--hoja-1);
+    padding:4px 14px;
+    border-radius:30px;
+    display:inline-block;
+}
+
+.titulo h2 span,
+.titulo h2{
+    letter-spacing:.3px;
+}
+
+.juego{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 canvas{
+    width:100%;
+    max-width:600px;
+    aspect-ratio:600/400;
 
-    background:#0f172a;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(63,178,79,.15), transparent 60%),
+        var(--panel);
 
-    border:5px solid #facc15;
+    border:5px solid var(--limon);
+    border-radius:18px;
 
-    border-radius:15px;
-
-    box-shadow:0px 10px 25px rgba(0,0,0,.4);
-
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.5),
+        inset 0 0 30px rgba(0,0,0,.5);
 }
 
 .panel{
-
     margin-top:20px;
 
     display:flex;
     justify-content:center;
+    flex-wrap:wrap;
 
-    gap:60px;
+    gap:18px;
 
     width:100%;
-
 }
 
 .dato{
+    background:linear-gradient(160deg, #16314d, #0e2236);
 
-    background:#334155;
+    padding:12px 24px;
 
-    padding:15px 30px;
-
-    border-radius:12px;
+    border-radius:14px;
+    border:2px solid var(--hoja-1);
 
     min-width:170px;
 
-    text-align:center;
+    display:flex;
+    align-items:center;
+    gap:14px;
 
-    box-shadow:0px 5px 15px rgba(0,0,0,.25);
+    box-shadow:0 6px 16px rgba(0,0,0,.3);
+}
 
+.icono{
+    font-size:38px;
+    line-height:1;
+}
+
+.info{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
 }
 
 .texto{
+    color:#bcd6c8;
 
-    display:block;
+    margin-bottom:2px;
 
-    color:#cbd5e1;
-
-    margin-bottom:6px;
-
-    font-size:15px;
-
+    font-size:20px;
+    font-weight:800;
+    letter-spacing:.6px;
+    text-transform:uppercase;
 }
 
 #txtPuntaje,
 #txtVidas{
+    font-family:'Baloo 2', sans-serif;
+    font-size:30px;
+    font-weight:700;
+    color:var(--limon-claro);
+    text-shadow:0 2px 0 rgba(0,0,0,.4);
+}
 
-    font-size:32px;
-
-    font-weight:bold;
-
-    color:#facc15;
-
+#txtVidas{
+    color:#ff8a8a;
 }
 
 .botones{
-
-    margin-top:25px;
+    margin-top:26px;
 
     display:flex;
 
@@ -146,44 +252,66 @@ canvas{
 
     justify-content:center;
 
-    gap:15px;
-
+    gap:14px;
 }
 
 .botones button{
-
-    background:#facc15;
-
-    color:#111827;
-
+    font-family:'Nunito', sans-serif;
     border:none;
 
-    padding:14px 22px;
+    padding:14px 24px;
 
-    border-radius:10px;
+    border-radius:12px;
 
-    font-size:16px;
-
-    font-weight:bold;
+    font-size:15.5px;
+    font-weight:800;
+    letter-spacing:.2px;
 
     cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
 
-    transition:.3s;
+    box-shadow:0 6px 0 rgba(0,0,0,.25), 0 8px 16px rgba(0,0,0,.3);
+}
 
+.botones button:nth-child(1),
+.botones button:nth-child(2){
+    background:linear-gradient(180deg, var(--limon-claro), var(--limon));
+    color:var(--tinta);
+}
+
+.botones button:nth-child(3){
+    background:linear-gradient(180deg, #5fd874, var(--hoja-1));
+    color:#06280f;
+}
+
+.botones button:nth-child(4){
+    background:linear-gradient(180deg, #79c2ff, var(--azul-fantasma));
+    color:#06243f;
 }
 
 .botones button:hover{
-
     transform:translateY(-3px);
-
-    background:#fde047;
-
-    box-shadow:0px 8px 18px rgba(0,0,0,.3);
-
+    filter:brightness(1.06);
 }
 
 .botones button:active{
+    transform:translateY(2px) scale(.97);
+    box-shadow:0 2px 0 rgba(0,0,0,.25), 0 4px 10px rgba(0,0,0,.3);
+}
 
-    transform:scale(.96);
+@media (max-width:560px){
+    .titulo h1{
+        font-size:32px;
+    }
 
+    .botones button{
+        flex:1 1 auto;
+        padding:14px 14px;
+        font-size:14px;
+    }
+
+    .dato{
+        min-width:140px;
+        padding:10px 18px;
+    }
 }

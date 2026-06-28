@@ -22,7 +22,7 @@ function iniciar(){
 }
 
 function dibujarSuelo(){
-    ctx.fillStyle="#0bec1e";
+    ctx.fillStyle="#d68f54";
     ctx.fillRect(0,canvas.height-ALTURA_SUELO,canvas.width,ALTURA_SUELO)
 }
 
@@ -55,7 +55,7 @@ function limpiarCanva(){
 }
 
 function dibujarLimon(){
- ctx.fillStyle="red";
+ ctx.fillStyle="#0bec1e";
     ctx.fillRect(limonX,limonY,ANCHO_LIMON,ALTURA_LIMON)
 }
 
@@ -88,7 +88,7 @@ function detectarPiso(){
         vidas=vidas-1
         mostrarEnSpam("txtVidas",vidas)
         if(vidas==0){
-            alert ("FINALIZADO")
+            alert ("🍋 ¡La limonada tendrá que esperar! Inténtalo otra vez")
             clearInterval(intervalo)
         }
     }
